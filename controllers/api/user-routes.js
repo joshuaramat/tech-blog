@@ -62,11 +62,11 @@ router.post('/', (req, res) => {
   })
     .then(dbUserData => {
       req.session.save(() => {
-          req.session.user_id = dbUserData.id;
-          req.session.username = dbUserData.username;
-          req.session.loggedIn = true;
-
-          res.json(dbUserData);
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+  
+        res.json(dbUserData);
       });
     })
     .catch(err => {
@@ -95,25 +95,24 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-        // decalre session variables
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-    
-
-        res.json({ user: dbUserData, message: 'You are now logged in!' });
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+  
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
 });
 
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
 });
 
 router.put('/:id', (req, res) => {
