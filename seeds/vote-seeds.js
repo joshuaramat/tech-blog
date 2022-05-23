@@ -1,59 +1,196 @@
-const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
+const { Vote } = require('../models');
 
-const userdata = [
+const votedata = [
   {
-    username: 'alesmonde0',
-    email: 'nwestnedge0@cbc.ca',
-    password: 'password123'
+    user_id: 9,
+    post_id: 19
   },
   {
-    username: 'jwilloughway1',
-    email: 'rmebes1@sogou.com',
-    password: 'password123'
+    user_id: 1,
+    post_id: 8
   },
   {
-    username: 'iboddam2',
-    email: 'cstoneman2@last.fm',
-    password: 'password123'
+    user_id: 8,
+    post_id: 12
   },
   {
-    username: 'dstanmer3',
-    email: 'ihellier3@goo.ne.jp',
-    password: 'password123'
+    user_id: 8,
+    post_id: 19
   },
   {
-    username: 'djiri4',
-    email: 'gmidgley4@weather.com',
-    password: 'password123'
+    user_id: 9,
+    post_id: 3
   },
   {
-    username: 'msprague5',
-    email: 'larnout5@imdb.com',
-    password: 'password123'
+    user_id: 3,
+    post_id: 16
   },
   {
-    username: 'mpergens6',
-    email: 'hnapleton6@feedburner.com',
-    password: 'password123'
+    user_id: 4,
+    post_id: 7
   },
   {
-    username: 'tpenniell7',
-    email: 'kperigo7@china.com.cn',
-    password: 'password123'
+    user_id: 10,
+    post_id: 7
   },
   {
-    username: 'msabbins8',
-    email: 'lmongain8@google.ru',
-    password: 'password123'
+    user_id: 3,
+    post_id: 18
   },
   {
-    username: 'jmacarthur9',
-    email: 'bsteen9@epa.gov',
-    password: 'password123'
+    user_id: 9,
+    post_id: 16
+  },
+  {
+    user_id: 3,
+    post_id: 17
+  },
+  {
+    user_id: 10,
+    post_id: 2
+  },
+  {
+    user_id: 6,
+    post_id: 10
+  },
+  {
+    user_id: 5,
+    post_id: 11
+  },
+  {
+    user_id: 6,
+    post_id: 1
+  },
+  {
+    user_id: 9,
+    post_id: 18
+  },
+  {
+    user_id: 6,
+    post_id: 15
+  },
+  {
+    user_id: 6,
+    post_id: 7
+  },
+  {
+    user_id: 6,
+    post_id: 4
+  },
+  {
+    user_id: 1,
+    post_id: 16
+  },
+  {
+    user_id: 10,
+    post_id: 18
+  },
+  {
+    user_id: 4,
+    post_id: 10
+  },
+  {
+    user_id: 10,
+    post_id: 5
+  },
+  {
+    user_id: 5,
+    post_id: 16
+  },
+  {
+    user_id: 6,
+    post_id: 17
+  },
+  {
+    user_id: 1,
+    post_id: 15
+  },
+  {
+    user_id: 7,
+    post_id: 13
+  },
+  {
+    user_id: 6,
+    post_id: 3
+  },
+  {
+    user_id: 6,
+    post_id: 13
+  },
+  {
+    user_id: 7,
+    post_id: 1
+  },
+  {
+    user_id: 4,
+    post_id: 15
+  },
+  {
+    user_id: 2,
+    post_id: 18
+  },
+  {
+    user_id: 9,
+    post_id: 10
+  },
+  {
+    user_id: 10,
+    post_id: 15
+  },
+  {
+    user_id: 8,
+    post_id: 1
+  },
+  {
+    user_id: 10,
+    post_id: 8
+  },
+  {
+    user_id: 2,
+    post_id: 13
+  },
+  {
+    user_id: 9,
+    post_id: 20
+  },
+  {
+    user_id: 1,
+    post_id: 17
+  },
+  {
+    user_id: 10,
+    post_id: 9
+  },
+  {
+    user_id: 10,
+    post_id: 3
+  },
+  {
+    user_id: 5,
+    post_id: 6
+  },
+  {
+    user_id: 6,
+    post_id: 12
+  },
+  {
+    user_id: 5,
+    post_id: 2
+  },
+  {
+    user_id: 6,
+    post_id: 14
+  },
+  {
+    user_id: 8,
+    post_id: 18
+  },
+  {
+    user_id: 3,
+    post_id: 4
   }
 ];
 
-const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
+const seedVotes = () => Vote.bulkCreate(votedata);
 
-module.exports = seedUsers;
+module.exports = seedVotes;
