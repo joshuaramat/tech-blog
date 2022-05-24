@@ -6,43 +6,21 @@ const seedVotes = require('./vote-seeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
-  try {
-    await sequelize.sync({ force: true });
+  await sequelize.sync({ force: true });
   console.log('SEQUELIZE--------------');
-  }
-  catch (error) {
-    console.error(error);
-  }
-
-  try {
-    await seedUsers();
+  await seedUsers();
   console.log('USERS--------------');
-  } catch (error) {
-    console.error(error);
-  }
 
-  try {
-    await seedPosts();
-    console.log('POSTS--------------');
-  } catch (error) {
-    console.error(error);
-  }
+  await seedPosts();
+  console.log('POSTS--------------');
 
-  try {
-    await seedComments();
-    console.log('COMMENTS--------------');
-  } catch (error) {
-    console.error(error);
-  }
-  
-  try {
-    await seedVotes();
-    console.log('VOTES--------------');
-  } catch (error) {
-    console.error(error);
-  }
+  await seedComments();
+  console.log('COMMENTS--------------');
+
+  await seedVotes();
+  console.log('VOTES--------------');
 
   process.exit(0);
 };
 
-seedAll();
+seedAll().catch(err => console.log('seedAll error: ', err));
