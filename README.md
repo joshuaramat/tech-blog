@@ -1,4 +1,4 @@
-# Tech Blog
+# blogVibez
 
 ## Purpose
 A CMS-style blog site to publish articles, blog posts, thoughts and opinions
