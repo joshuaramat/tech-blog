@@ -1,5 +1,8 @@
 # blogVibez
 
+## Link
+https://calm-chamber-28919.herokuapp.com/
+
 ## Purpose
 A CMS-style blog site to publish articles, blog posts, thoughts and opinions
 
@@ -9,5 +12,8 @@ A CMS-style blog site to publish articles, blog posts, thoughts and opinions
 * Node.js
 * Express.js
 * MySQL
+
+## Screenshots
+
 
 Made by Joshua Ramat
